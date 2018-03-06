@@ -88,10 +88,10 @@ export default class App extends React.Component {
       let forecastDay=i;
       let forecastIcon = <Text style={styles.forecastIcon}>{this.state.forecast[i] &&
         (<Icon size={30} name={icon(this.state.forecast[i].icon)} />)}</Text>
-      let forecastTemp=<Text>{this.state.forecast[i] &&
+      let forecastTemperature=<Text>{this.state.forecast[i] &&
         (<Text style={styles.forecastTemperature}>{Math.round(this.state.forecast[i].temperatureHigh)}</Text>)}</Text>
-      forecast.push(<View style={styles.forecastDay} key={forecastDay}>
-        {forecastIcon}{forecastTemp}</View>)
+      forecast.push(<View style={styles.forecastDay} key={i}>
+        {forecastIcon}{forecastTemperature}</View>)
   }
 
     return (
@@ -115,8 +115,8 @@ export default class App extends React.Component {
         </View>
         <View style={styles.forecast}>
           {forecast}
-        </View>
       </View>
+    </View>
     );
   }
 }
